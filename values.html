@@ -5,36 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Values</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,500&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">   
 </head>
 <style>
     body {
         margin: 0;
+        background-color: #f05454;
     }
+
 
     header {
         width: 100%; /* Relative metric to adjust to the screen */
         height: 80px;
         background-color: #f05454;
+        display: flex;
+        justify-content: space-between;
     }
 
-    header img {
-        width: 64px;
-        margin-top: 8px;
+    .header__img {
+        width: 50px;
+        margin-top: 20px;
         margin-left: 30px;
     }
 
     header h1 {
         display: inline;
+        font-family: 'Poppins';
+        position: absolute;
+        margin-left: 15px;
+        margin-top: 15px; 
+        color: #e8e8e8;
+        font-weight: 200;
     }
+
+    header h1::first-letter{
+        font-style: italic ;
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .header__menu {
+        margin-right: 30px;
+        color: #e8e8e8;
+    }
+
+    .header__menu:hover ul, ul:hover {
+        display: block;
+    }
+
+    .header__menu ul {
+        /*Display None*/
+        display: none;
+        list-style: none;
+        padding: 0px;
+        position: absolute;
+        text-align: right;
+        margin-left: 40px;
+        background-color: #30475e;
+        border-radius: 10px;
+        margin-top: 5px;
+        overflow: hidden;
+    }
+
+    .header__menu li {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .header__menu li:hover {
+        background-color: #e8e8e8;
+    }
+
+    .header__menu li:hover a {
+        color: #30475e;
+    }
+
+    .header__menu li a {
+        font-family: "Poppins";
+        font-weight: 400;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .header__menu--profile {
+        align-items: center;
+        font-family: "Poppins";
+        font-weight: 400;
+        margin: 20px 50px 0px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .header__menu li a:hover {
+        font-weight: 700;
+    }
+
+    .main {
+        height: 300px;
+    }
+
+    .main__title {
+        color: white;
+        font-size: 25px;
+        font-family: "Poppins";
+    }
+
+    .input {
+        background-color: rgba(255, 255, 255, 0.20);
+        border: 2px solid white;
+        border-radius: 40px;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        height: 50px;
+        padding: 0 20px;
+        width: 70%;
+        outline: none;
+    }
+
+    ::placeholder {
+        color: white;
+    }
+
 </style>
 <body>
     <header>
-        <img src="motion-graphics.png" alt="MotionLogo">
-        <h1>Animix</h1>
+        <div id="headerTitle">
+            <img class="header__img" src="cube.png" alt="MotionLogo">
+            <h1>Animix</h1>
+        </div>
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="naruto_user.png" alt="User icon">
+                <p>Profile</p>
+            </div>
+            <ul>
+                <li><a href="/">Account</a></li>
+                <li><a href="/">Close Session</a></li>
+            </ul>
+        </div>
     </header>
-    <main>
-    </main>
-    <footer></footer>
+    <section class="main">
+        <h2 class="main__title">What do you want to watch today?</h2>
+        <input class="input" type="text" placeholder="Search...">
+    </section>
 </body>
 </html>
